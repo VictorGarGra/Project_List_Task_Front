@@ -14,7 +14,7 @@ export interface Task {
   providedIn: 'root',
 })
 export class TaskService {
-  private apiUrl = 'http://localhost:8080/api/tasks';
+  private apiUrl = 'https://project-list-task-api.onrender.com/api/tasks';
 
   constructor(private http: HttpClient) {}
 
