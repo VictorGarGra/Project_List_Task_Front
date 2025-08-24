@@ -1,0 +1,14 @@
+<div class="card-body border-bottom p-3">
+  <div class="input-group">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="¿Qué necesitas hacer?"
+      [(ngModel)]="newTaskDescription"
+      (keyup.enter)="addTask()"
+    />
+    <button class="btn btn-primary" (click)="addTask()">
+      <i class="bi bi-plus-lg"></i> Añadir
+    </button>
+  </div>
+</div>
