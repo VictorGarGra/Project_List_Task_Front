@@ -5,6 +5,20 @@
     <app-task-form (taskAdded)="onTaskAdded($event)"></app-task-form>
 
     <div class="card-body">
+      @if (isLoading) {
+      <div class="text-center p-5">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="mt-3 text-muted">Conectando con el servidor...</p>
+      </div>
+      } @else if (tasks.length === 0) {
+      <div class="text-center p-5">
+        <p class="text-muted">
+          No hay tareas pendientes. ¡Añade una nueva para empezar!
+        </p>
+      </div>
+      } @else {
       <table class="table table-hover">
         <thead>
           <tr>
@@ -72,6 +86,7 @@
           }
         </tbody>
       </table>
+      }
     </div>
   </div>
 </div>

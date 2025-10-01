@@ -17,12 +17,14 @@ export class TaskComponent implements OnInit {
 
   editingTask: Task | null = null;
   private originalTask: Task | null = null;
+  public isLoading: boolean = true;
 
   constructor(private taskService: TaskService) {}
 
   ngOnInit() {
     this.taskService.getTasks().subscribe((data: Task[]) => {
       this.tasks = data;
+      this.isLoading = false;
     });
   }
 
